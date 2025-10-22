@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import MaranhaoMap from "@/components/MaranhaoMap";
 
 const Location = () => {
   const regions = [
@@ -23,29 +24,11 @@ const Location = () => {
           </p>
         </div>
 
-        {/* Brazil Map Representation */}
+        {/* Maranhão Map */}
         <div className="max-w-5xl mx-auto mb-16">
           <Card className="border-0 shadow-xl overflow-hidden">
-            <CardContent className="p-0">
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 md:p-16">
-                <div className="relative aspect-[4/3] bg-background/50 rounded-xl p-8 backdrop-blur-sm">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg viewBox="0 0 200 200" className="w-full h-full max-w-md">
-                      {/* Simplified Maranhão Map */}
-                      <path
-                        d="M 50 60 L 80 50 L 110 55 L 135 50 L 155 60 L 165 80 L 170 105 L 165 130 L 150 145 L 125 150 L 100 155 L 75 150 L 55 140 L 40 120 L 35 95 L 38 75 Z"
-                        className="fill-primary/20 stroke-primary stroke-2"
-                      />
-                      {/* Location Markers - Cities in Maranhão */}
-                      <circle cx="95" cy="100" r="5" className="fill-secondary animate-pulse" />
-                      <circle cx="125" cy="110" r="4" className="fill-secondary animate-pulse" />
-                      <circle cx="75" cy="120" r="4" className="fill-secondary animate-pulse" />
-                      <circle cx="105" cy="85" r="4" className="fill-secondary animate-pulse" />
-                      <circle cx="140" cy="95" r="4" className="fill-secondary animate-pulse" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+            <CardContent className="p-6 md:p-8">
+              <MaranhaoMap />
             </CardContent>
           </Card>
         </div>
