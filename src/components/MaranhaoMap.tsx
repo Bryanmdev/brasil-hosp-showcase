@@ -68,6 +68,35 @@ const MaranhaoMap = () => {
     );
   }
 
+  const MapContent = () => (
+    <>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      
+      {geoData && (
+        <GeoJSON 
+          data={geoData} 
+          style={geoJsonStyle}
+          onEachFeature={onEachFeature}
+        />
+      )}
+
+      {cities.map((city, index) => (
+        <Marker key={index} position={city.coords}>
+          <Popup>
+            <div className="text-center">
+              <strong>{city.name}</strong>
+              <br />
+              <span className="text-sm text-muted-foreground">Maranhão</span>
+            </div>
+          </Popup>
+        </Marker>
+      ))}
+    </>
+  );
+
   return (
     <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
       <MapContainer
@@ -76,30 +105,7 @@ const MaranhaoMap = () => {
         style={{ height: '100%', width: '100%' }}
         className="z-0"
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        
-        {geoData && (
-          <GeoJSON 
-            data={geoData} 
-            style={geoJsonStyle}
-            onEachFeature={onEachFeature}
-          />
-        )}
-
-        {cities.map((city, index) => (
-          <Marker key={index} position={city.coords}>
-            <Popup>
-              <div className="text-center">
-                <strong>{city.name}</strong>
-                <br />
-                <span className="text-sm text-muted-foreground">Maranhão</span>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+        <MapContent />
       </MapContainer>
     </div>
   );
