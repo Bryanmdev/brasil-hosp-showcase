@@ -31,17 +31,17 @@ const Location = () => {
                 <div className="relative aspect-[4/3] bg-background/50 rounded-xl p-8 backdrop-blur-sm">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <svg viewBox="0 0 200 200" className="w-full h-full max-w-md">
-                      {/* Simplified Brazil Map */}
+                      {/* Simplified Maranhão Map */}
                       <path
-                        d="M 100 20 L 140 40 L 160 60 L 170 90 L 165 120 L 150 150 L 130 170 L 100 180 L 70 170 L 50 150 L 35 120 L 30 90 L 40 60 L 60 40 Z"
+                        d="M 50 60 L 80 50 L 110 55 L 135 50 L 155 60 L 165 80 L 170 105 L 165 130 L 150 145 L 125 150 L 100 155 L 75 150 L 55 140 L 40 120 L 35 95 L 38 75 Z"
                         className="fill-primary/20 stroke-primary stroke-2"
                       />
-                      {/* Location Markers */}
-                      <circle cx="100" cy="100" r="4" className="fill-secondary animate-pulse" />
-                      <circle cx="80" cy="140" r="4" className="fill-secondary animate-pulse" />
-                      <circle cx="120" cy="130" r="4" className="fill-secondary animate-pulse" />
-                      <circle cx="100" cy="60" r="4" className="fill-secondary animate-pulse" />
-                      <circle cx="140" cy="90" r="4" className="fill-secondary animate-pulse" />
+                      {/* Location Markers - Cities in Maranhão */}
+                      <circle cx="95" cy="100" r="5" className="fill-secondary animate-pulse" />
+                      <circle cx="125" cy="110" r="4" className="fill-secondary animate-pulse" />
+                      <circle cx="75" cy="120" r="4" className="fill-secondary animate-pulse" />
+                      <circle cx="105" cy="85" r="4" className="fill-secondary animate-pulse" />
+                      <circle cx="140" cy="95" r="4" className="fill-secondary animate-pulse" />
                     </svg>
                   </div>
                 </div>
