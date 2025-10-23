@@ -3,8 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   const stats = [
-    { icon: Award, value: "25+", label: "Anos de Experiência" },
-    { icon: Users, value: "500+", label: "Clientes Satisfeitos" },
+    { icon: Award, value: "15+", label: "Anos de Experiência" },
+    { icon: Users, value: "1000+", label: "Clientes Satisfeitos" },
     { icon: TrendingUp, value: "98%", label: "Taxa de Satisfação" },
     { icon: Heart, value: "24/7", label: "Suporte Dedicado" },
   ];
@@ -18,7 +18,7 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A Brasil Hosp é uma empresa líder no fornecimento de equipamentos médicos, medicamentos e serviços especializados para o setor de saúde. Com mais de duas décadas de experiência, nos dedicamos a fornecer soluções de alta qualidade que fazem a diferença no cuidado com os pacientes.
+            A Brasil Hosp é uma empresa líder no fornecimento de equipamentos médicos, medicamentos e serviços especializados para o setor de saúde. Com mais de uma década de experiência, nos dedicamos a fornecer soluções de alta qualidade que fazem a diferença no cuidado com os pacientes.
           </p>
         </div>
 

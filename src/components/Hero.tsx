@@ -40,14 +40,23 @@ const Hero = () => {
               Solicite um Orçamento
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg"
-            >
-              <Phone className="mr-2" />
-              Entre em Contato
-            </Button>
+           {/* ESTE É O NOVO CÓDIGO COM O LINK */}
+<Button
+  size="lg"
+  variant="outline"
+  className="border-0 border-primary-foreground text-primary px-8 py-6 text-lg"
+  asChild  /* 1. Adiciona a prop asChild */
+>
+  {/* 2. Adiciona a tag <a> como filha */}
+  <a 
+    href="https://wa.me/559832271116"  /* 3. Coloque seu número aqui (com 55 + DDD) */
+    target="_blank" /* 4. Para abrir em uma nova aba */
+    rel="noopener noreferrer"
+  >
+    <Phone className="mr-2" />
+    Entre em Contato
+  </a>
+</Button>
           </div>
         </div>
       </div>

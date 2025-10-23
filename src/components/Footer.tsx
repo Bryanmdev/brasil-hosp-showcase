@@ -23,7 +23,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/brasilhosp/", label: "Instagram" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
   ];
 
@@ -35,12 +35,12 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Brasil Hosp</h3>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Fornecendo soluções de excelência para o setor de saúde brasileiro há mais de 25 anos.
+              Fornecendo soluções de excelência para o setor de saúde brasileiro há mais de 15 anos.
             </p>
             <div className="space-y-3">
-              <a href="tel:+551140000000" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a href="tel:+559832271116" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Phone size={18} />
-                <span>(11) 4000-0000</span>
+                <span>(98) 3227-1116</span>
               </a>
               <a href="mailto:contato@brasilhosp.com.br" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Mail size={18} />

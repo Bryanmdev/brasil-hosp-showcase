@@ -16,21 +16,60 @@ const Contact = () => {
     message: "",
   });
 
+  // MUDANÇA 1: Estado 'isSending' adicionado aqui
+  const [isSending, setIsSending] = useState(false);
+
+  // MUDANÇA 2: Função 'handleSubmit' substituída por esta
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
+    setIsSending(true); // Desabilita o botão
+
+    // ⚠️ COLOQUE A URL DA SUA API DO SHEETDB AQUI ⚠️
+    const SHEETDB_API_URL = "https://sheetdb.io/api/v1/kpk9sbt05lpgj";
+
+    // Prepara os dados para enviar
+    const dataToSend = {
+      ...formData,
+      timestamp: new Date().toLocaleString("pt-BR"), // Adiciona data e hora
+    };
+
+    // Usa o fetch para enviar (Método POST)
+    fetch(SHEETDB_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Sucesso:", data);
+      toast({
+        title: "Mensagem enviada!",
+        description: "Seus dados foram registrados. Entraremos em contato.",
+      });
+      // Limpa o formulário
+      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+      toast({
+        title: "Erro ao enviar.",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    })
+    .finally(() => {
+      setIsSending(false); // Reabilita o botão
     });
-    setFormData({ name: "", email: "", phone: "", company: "", message: "" });
   };
 
   const contactInfo = [
     {
       icon: Phone,
       title: "Telefone",
-      content: "(11) 4000-0000",
-      link: "tel:+551140000000",
+      content: "(98) 3227-1116",
+      link: "tel:+559832271116",
     },
     {
       icon: Mail,
@@ -41,8 +80,9 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Endereço",
-      content: "São Paulo, SP - Brasil",
-      link: "#",
+      content: "São Luís, MA - Brasil",
+      // (Mantive o link que você tinha na imagem)
+      link: "https://maps.app.goo.gl/yNdxshDkrvF33Ffe9", 
     },
   ];
 
@@ -73,6 +113,8 @@ const Contact = () => {
                       <h3 className="font-bold text-foreground mb-2">{info.title}</h3>
                       <a
                         href={info.link}
+                        target="_blank" // Adicionado para abrir links em nova aba
+                        rel="noopener noreferrer" // Adicionado por segurança
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         {info.content}
@@ -157,12 +199,14 @@ const Contact = () => {
                     />
                   </div>
 
+                  {/* MUDANÇA 3: Botão 'Button' atualizado */}
                   <Button
                     type="submit"
                     size="lg"
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-primary-foreground"
+                    disabled={isSending}
                   >
-                    Enviar Mensagem
+                    {isSending ? "Enviando..." : "Enviar Mensagem"}
                     <Send className="ml-2" size={20} />
                   </Button>
                 </form>

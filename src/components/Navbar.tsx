@@ -39,12 +39,16 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-          >
-            Brasil Hosp
-          </button>
+        <button
+    onClick={() => scrollToSection("hero")}
+    className="hover:opacity-80 transition-opacity p-0"
+>
+    <img 
+        src="/logo-brasil-hosp.png"  /* <-- MUDAMOS AQUI */
+        alt="Logo Brasil Hosp" 
+        className="h-16" /* (ou o tamanho que você preferir: h-10, h-12, etc.) */
+    />
+</button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
