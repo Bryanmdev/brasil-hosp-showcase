@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: (https://vercel.com/bryan-mirandas-projects-2e9c3b60/brasil-hosp-showcase/AenTKBBckEoVj8PRMe8TYLWLrZSt)
+**URL**: (https://brasil-hosp-showcase.vercel.app/)
 
 ## What technologies are used for this project?
 
