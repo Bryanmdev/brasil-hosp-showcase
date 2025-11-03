@@ -74,7 +74,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "contato@brasilhosp.com.br",
+      content: "contato@brasil-hosp.com.br",
       link: "mailto:contato@brasilhosp.com.br",
     },
     {
