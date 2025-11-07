@@ -42,9 +42,9 @@ const Footer = () => {
                 <Phone size={18} />
                 <span>(98) 3227-1116</span>
               </a>
-              <a href="mailto:contato@brasilhosp.com.br" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=contato@brasil-hosp.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Mail size={18} />
-                <span>contato@brasilhosp.com.br</span>
+                <span>contato@brasilhosp.com</span>
               </a>
             </div>
           </div>
